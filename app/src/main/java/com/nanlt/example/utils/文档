@@ -1,0 +1,48 @@
+package com.nanlt.example.utils;
+
+import android.content.res.AssetManager;
+
+import java.lang.reflect.Method;
+
+/**
+ * 文档
+ */
+public class Document {
+    //tinker 热修复 robust //美团的 热修复框架  tinker //腾讯的 热修复
+    //代码修复：dex 队列 classLoader   bug.java    okay.java    插队 插桩原理   reflect 反射技术  xmlpullparse  setContentView（R.layout.xx）
+    //资源修复： assetManager  addAsset
+    //so库修复 tinker nativeLibrary
+
+    //    java.lang.Class; //类
+//    java.lang.reflect.Constructor;//构造方法
+//    java.lang.reflect.Field; //类的成员变量
+//    java.lang.reflect.Method;//类的方法
+//    java.lang.reflect.Modifier;//访问权限
+    //dx.bat
+    public void getPath() {
+//    /addAssetPath
+        try {
+            AssetManager assetManager = AssetManager.class.newInstance();
+            Method addAssetPath = assetManager.getClass().getMethod("addAssetPath", String.class);
+//        addAssetPath.invoke(assetManager,)
+        } catch (IllegalAccessException | InstantiationException | NoSuchMethodException e) {
+            e.printStackTrace();
+        }
+
+    }
+    //参考 文档 ：
+//    https://www.jianshu.com/p/78f2e2d9484a
+//    https://developer.android.com/studio/build/multidex
+//    http://androidxref.com/6.0.1_r10/xref/libcore/dalvik/src/main/java/dalvik/system/BaseDexClassLoader.java
+//    jetpack
+//    https://developer.android.google.cn/jetpack
+
+//    目前用得比较多的动态权限第三方库PermissionDispatcher
+//    https://github.com/permissions-dispatcher/PermissionsDispatcher
+
+
+    /**
+     *
+     *
+     */
+}

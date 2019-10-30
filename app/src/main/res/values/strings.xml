@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Tinker_fix</string>
+    <string name="show_toast">showToast</string>
+    <string name="fix">fix</string>
+</resources>
